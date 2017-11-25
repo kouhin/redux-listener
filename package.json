@@ -1,0 +1,49 @@
+{
+  "name": "redux-listener",
+  "version": "1.0.0",
+  "description": "(Redux Middleware) Dispatch async action listener at any time and do side effect for Redux",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
+  "files": [
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf build lib es",
+    "lint": "eslint *.md src test --ext .js --ext .md",
+    "test": "mocha --require @babel/register --require @babel/polyfill",
+    "build:cjs": "BABEL_ENV=cjs babel src --out-dir lib",
+    "build:es": "BABEL_ENV=es babel src --out-dir es",
+    "build": "npm run clean && npm run build:cjs && npm run build:es",
+    "prepublish": "npm run clean && npm run lint && npm test && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kouhin/redux-listener.git"
+  },
+  "author": "Bin Hou <houbin217jz@gmail.com> (https://twitter.com/houbin217jz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kouhin/redux-listener/issues"
+  },
+  "homepage": "https://github.com/kouhin/redux-listener#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.32",
+    "@babel/core": "^7.0.0-beta.32",
+    "@babel/node": "^7.0.0-beta.32",
+    "@babel/polyfill": "^7.0.0-beta.32",
+    "@babel/preset-env": "^7.0.0-beta.32",
+    "@babel/register": "^7.0.0-beta.32",
+    "babel-eslint": "^8.0.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.12.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-markdown": "^1.0.0-beta.6",
+    "mocha": "^4.0.1",
+    "prettier": "^1.8.2",
+    "redux": "^3.7.2",
+    "rimraf": "^2.6.2"
+  },
+  "dependencies": {}
+}
